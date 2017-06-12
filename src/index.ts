@@ -1,35 +1,30 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SampleComponent } from './sample.component';
-import { SampleDirective } from './sample.directive';
-import { SamplePipe } from './sample.pipe';
-import { SampleService } from './sample.service';
 
-export * from './sample.component';
-export * from './sample.directive';
-export * from './sample.pipe';
-export * from './sample.service';
+/** WIDGETS */
+import { WorldClockComponent } from './widgets/world-clock/world-clock.component';
+
+/** WIDGETS */
+export * from './widgets/world-clock/world-clock.component';
 
 @NgModule({
   imports: [
     CommonModule
   ],
   declarations: [
-    SampleComponent,
-    SampleDirective,
-    SamplePipe
+    // WIDGETS
+    WorldClockComponent
   ],
   exports: [
-    SampleComponent,
-    SampleDirective,
-    SamplePipe
+    // WIDGETS
+    WorldClockComponent
   ]
 })
-export class SampleModule {
+export class WidgetsModule {
   static forRoot(): ModuleWithProviders {
     return {
-      ngModule: SampleModule,
-      providers: [SampleService]
+      ngModule: WidgetsModule,
+      providers: []
     };
   }
 }
